@@ -1,5 +1,6 @@
 import React from "react";
-import { TaskItem } from "./TaskItem";
+// import { TaskItem } from "./TaskItem";
+import { TaskList } from "./TaskList";
 
 function Task() {
   const [query, setQuery] = React.useState("");
@@ -19,7 +20,7 @@ function Task() {
     setTasks(newTasks);
   };
 
-  // console.log(tasks)
+  // console.log(tasks);
   return (
     <div>
       <h1>Tasks</h1>
@@ -33,15 +34,7 @@ function Task() {
         <button onClick={handleAdd}>ADD</button>
       </div>
       <div>
-        {tasks.map((item) => {
-          return (
-            <TaskItem
-              title={item.title}
-              status={item.status}
-              key={item.title}
-            />
-          );
-        })}
+        <TaskList tasks={tasks} />
       </div>
     </div>
   );
